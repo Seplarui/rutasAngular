@@ -12,6 +12,7 @@
 
     <thead>
       <tr>
+        <th scope="col">Identificador</th>
         <th scope="col">Nombre</th>
         <th scope="col">Especie</th>
         <th scope="col">Género</th>
@@ -20,10 +21,12 @@
     </thead>
     <tbody>
       <tr *ngFor='let char of characters["results"]'>
+        <td>{{char.id}}</td>
         <td>{{char.name}}</td>
         <td>{{char.species}}</td>
         <td>{{char.gender}}</td>
-        <td><button type="button" class="btn btn-outline-info">Detalle</button></td>
+        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id ]">Detalle</button>
+        </td>
       </tr>
     </tbody>
   </table>
