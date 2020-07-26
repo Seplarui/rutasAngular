@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../services/data-api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-get-characters',
@@ -9,7 +10,8 @@ import { DataApiService } from '../../services/data-api.service';
 export class GetCharactersComponent implements OnInit {
 
   characters: any[];
-  constructor(private dataApi: DataApiService) { }
+  urlApi: string;
+  constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -25,8 +27,6 @@ export class GetCharactersComponent implements OnInit {
     );
 
     this.dataApi.getCharacters().subscribe((characters) => console.log(characters)); // mostrar en consola
-
-
   }
 
 }

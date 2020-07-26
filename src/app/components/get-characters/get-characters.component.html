@@ -37,6 +37,9 @@
   </table>
   <hr>
   <h6>Paginación</h6>
-  <a href="{{characters['info'].next}}">Siguiente</a>
-  <a href="{{characters['info'].prev}}">Anterior</a>
+  <!-- <a href="{{characters['info'].next}}">Siguiente</a>
+  <a href="{{characters['info'].prev}}">Anterior</a> -->
+  <button type="button" [routerLink]="['/characters',characters['info'].prev]">Anterior</button>
+  <button type="button" [routerLink]="['/characters',characters['info'].next]">Siguiente</button>
+
 </div>
