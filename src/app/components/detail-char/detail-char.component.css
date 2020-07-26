@@ -4,8 +4,28 @@
 }
 
 p {
-  margin-top:10px;
+  margin-top: 10px;
 }
+
 img {
   border-radius: 20px;
+}
+
+.poster {
+  border-radius: 20px;
+  background-color: yellowgreen;
+  border-style: solid;
+  align-items: center;
+}
+
+.elementos {
+  margin-left: 20%;
+}
+
+.elementos>p {
+  margin-left: 30%;
+}
+
+.derecha {
+  float: right;
 }

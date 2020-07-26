@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-4">
-      <img src={{character.image}} />
-      <p><strong>Nombre: {{character.name}}</strong></p>
-      <p><strong>Estado: {{character.status}}</strong></p>
-      <p><strong>Especie: {{character.species}}</strong></p>
-      <p><strong>Género: {{character.gender}}</strong></p>
+      <div class="poster">
+        <span class="elementos mx-auto">
+          <img  class="elementos" src={{character.image}} />
+          <p class="elementos"><strong>Nombre: {{character.name}}</strong></p>
+          <p class="elementos"><strong>Estado: {{character.status}}</strong></p>
+          <p class="elementos"><strong>Especie: {{character.species}}</strong></p>
+          <p class="elementos"><strong>Género: {{character.gender}}</strong></p>
+        </span>
+      </div>
+      <button type="button" class="btn btn-primary derecha" [routerLink]="['/']">Volver</button>
     </div>
   </div>
 </div>
