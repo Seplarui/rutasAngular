@@ -1,10 +1,30 @@
-<p>get-characters works!</p>
-
+<!-- <p *ngFor = 'let char of characters["results"]'>
 {{characters['info'].count}}
 {{characters['results'][0].name}}
-
-<p *ngFor = 'let char of characters["results"]'>
-
     <span>{{char.name}}</span>
 
-</p>
+</p> -->
+
+<div class="container">
+  <h1>LISTA PERSONAJES</h1>
+
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Especie</th>
+        <th scope="col">Género</th>
+        <th scopie="col">Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let char of characters["results"]'>
+        <td>{{char.name}}</td>
+        <td>{{char.species}}</td>
+        <td>{{char.gender}}</td>
+        <td><button type="button" class="btn btn-outline-info">Detalle</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
