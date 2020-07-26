@@ -17,6 +17,13 @@ export class GetCharactersComponent implements OnInit {
   }
 
   getCharacters() {
+
+    this.dataApi.getCharacters().subscribe((response) => {
+      this.characters = response;
+    },
+      (error) => { console.error(error); }
+    );
+
     this.dataApi.getCharacters().subscribe((characters) => console.log(characters)); // mostrar en consola
 
 

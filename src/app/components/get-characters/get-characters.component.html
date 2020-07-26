@@ -1,3 +1,10 @@
 <p>get-characters works!</p>
 
-<router-outlet></router-outlet>
+{{characters['info'].count}}
+{{characters['results'][0].name}}
+
+<p *ngFor = 'let char of characters["results"]'>
+
+    <span>{{char.name}}</span>
+
+</p>
