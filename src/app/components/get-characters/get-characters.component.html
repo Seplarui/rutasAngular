@@ -6,6 +6,10 @@
 </p> -->
 
 <div class="container">
+  <hr>
+  <h6>PAGINACIÓN</h6>
+
+  <hr>
   <h1>LISTA PERSONAJES</h1>
 
   <table class="table table-striped">
@@ -25,9 +29,14 @@
         <td>{{char.name}}</td>
         <td>{{char.species}}</td>
         <td>{{char.gender}}</td>
-        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id ]">Detalle</button></td>
-
+        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id ]">Detalle</button>
+        </td>
+        {{char.next}}
       </tr>
     </tbody>
   </table>
+  <hr>
+  <h6>Paginación</h6>
+  <a href="{{characters['info'].next}}">Siguiente</a>
+  <a href="{{characters['info'].prev}}">Anterior</a>
 </div>
