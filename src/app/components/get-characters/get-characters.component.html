@@ -7,9 +7,14 @@
 
 <div class="container">
   <h1>LISTA PERSONAJES</h1>
-
+  <div class="row">
+    <div class="col-md-6 offset-md-5">
+      <button type="button" class="btn btn-outline-info" (click)="getPage(characters['info'].prev)">Anterior</button>
+      <button type="button" class="btn btn-outline-info" (click)="getPage(characters['info'].next)">Siguiente</button>
+    </div>
+  </div>
+  <br>
   <table class="table table-striped">
-
     <thead>
       <tr>
         <th scope="col">Identificador</th>
@@ -31,10 +36,12 @@
     </tbody>
   </table>
   <hr>
-  <h6>Paginación</h6>
+  <!-- <h6>Paginación</h6>
   <!-- <a href="{{characters['info'].next}}">Siguiente</a>
   <a href="{{characters['info'].prev}}">Anterior</a> -->
-  <button type="button" [routerLink]="['/characters',characters['info'].prev]">Anterior</button>
-  <button type="button" [routerLink]="['/characters',characters['info'].next]">Siguiente</button>
+  <!-- <button type="button" [routerLink]="['/characters',characters['info'].prev]">Anterior</button> -->
+  <!-- <button type="button" (click)="getPage(characters['info'].prev)">Anterior</button> -->
+  <!-- <button type="button" [routerLink]="['/characters',characters['info'].next.substring(48, characters['info'].next.length)]">Siguiente</button> -->
+  <!-- <button type="button" (click)="getPage(characters['info'].next)">Siguiente</button> -->
 
 </div>

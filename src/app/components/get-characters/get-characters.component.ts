@@ -29,4 +29,30 @@ export class GetCharactersComponent implements OnInit {
     this.dataApi.getCharacters().subscribe((characters) => console.log(characters)); // mostrar en consola
   }
 
+  getPage(urlApi) {
+
+    console.log(urlApi);
+
+    if (urlApi === null || urlApi === '') {
+      //
+    } else {
+      const page = urlApi.substring(48, urlApi.lenght);
+      if (page === null || page === '') {
+        this.dataApi.getCharPage(1).subscribe((response) => {
+          this.characters = response;
+        },
+          (error) => { console.error(error); }
+        );
+      } else {
+        console.log('Número de página: ' + page);
+        this.dataApi.getCharPage(page).subscribe((response) => {
+          this.characters = response;
+        },
+          (error) => { console.error(error); }
+        );
+        this.dataApi.getCharPage(page).subscribe((characters) => console.log(characters));
+
+      }
+    }
+  }
 }

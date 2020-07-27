@@ -16,6 +16,17 @@ export class DataApiService {
     return this.http.get<any>(urlApi);
 
   }
+
+  getDetailChar(char: string) {
+    console.log('API: ' + char);
+    const urlApi = `https://rickandmortyapi.com/api/character/${char}`;
+    return this.http.get<any>(urlApi);
+  }
+
+  getCharPage(page: number) {
+    const urlApi =  `https://rickandmortyapi.com/api/character/?page=${page}`;
+    return this.http.get<any>(urlApi);
+  }
 }
 
 
