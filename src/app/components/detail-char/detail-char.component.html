@@ -10,7 +10,8 @@
           <p class="elementos"><strong>Género: {{character.gender}}</strong></p>
         </span>
       </div>
-      <button type="button" class="btn btn-primary derecha" [routerLink]="['/']">Volver</button>
+      <!-- <button type="button" class="btn btn-primary derecha" [routerLink]="['/']">Volver</button> -->
+      <button type="button" class="btn btn-primary derecha" (click)="backClicked()" >Volver</button>
     </div>
   </div>
 </div>

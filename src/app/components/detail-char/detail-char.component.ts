@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataApiService } from '../../services/data-api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail-char',
@@ -11,7 +12,7 @@ export class DetailCharComponent implements OnInit {
 
   character: any;
   char: string;
-  constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
+  constructor(private dataApi: DataApiService, private route: ActivatedRoute, private _location: Location) { }
 
   ngOnInit(): void {
     const char = this.route.snapshot.paramMap.get('char');
@@ -29,6 +30,10 @@ export class DetailCharComponent implements OnInit {
     console.log('metodo detail-char: ' + char);
     this.dataApi.getDetailChar(char).subscribe((character) => console.log(character));
 
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }
