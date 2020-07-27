@@ -1,16 +1,10 @@
-<!-- <p *ngFor = 'let char of characters["results"]'>
-{{characters['info'].count}}
-{{characters['results'][0].name}}
-    <span>{{char.name}}</span>
-
-</p> -->
-
 <div class="container">
   <h1>LISTA PERSONAJES</h1>
   <div class="row">
     <div class="col-md-6 offset-md-5">
-      <button type="button" class="btn btn-outline-info" (click)="getPage(characters['info'].prev)">Anterior</button>
-      <button type="button" class="btn btn-outline-info" (click)="getPage(characters['info'].next)">Siguiente</button>
+      <button type="button" class="btn btn-outline-success" (click)="getPage(characters['info'].prev)">Anterior</button>
+      <button type="button" class="btn btn-outline-success"
+        (click)="getPage(characters['info'].next)">Siguiente</button>
     </div>
   </div>
   <br>
@@ -30,7 +24,7 @@
         <td>{{char.name}}</td>
         <td>{{char.species}}</td>
         <td>{{char.gender}}</td>
-        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id ]">Detalle</button>
+        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id]">Detalle</button>
         </td>
       </tr>
     </tbody>
