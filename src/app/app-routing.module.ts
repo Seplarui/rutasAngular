@@ -5,8 +5,8 @@ import { DetailCharComponent } from './components/detail-char/detail-char.compon
 
 
 const routes: Routes = [
-  { path: '', component: GetCharactersComponent },
-  { path: 'detail/:char', component: DetailCharComponent }
+  { path: '', component: GetCharactersComponent, pathMatch: 'full' },
+  { path: 'detail/:char', component: DetailCharComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
