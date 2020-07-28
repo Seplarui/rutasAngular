@@ -12,7 +12,7 @@ export class DetailCharComponent implements OnInit {
 
   character: any;
   char: string;
-  constructor(private dataApi: DataApiService, private route: ActivatedRoute, private _location: Location) { }
+  constructor(private dataApi: DataApiService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     const char = this.route.snapshot.paramMap.get('char');
@@ -33,7 +33,7 @@ export class DetailCharComponent implements OnInit {
   }
 
   backClicked() {
-    this._location.back();
+    this.location.back();
   }
 
 }
