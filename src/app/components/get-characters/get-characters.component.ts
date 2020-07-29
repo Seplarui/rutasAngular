@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataApiService } from '../../services/data-api.service';
 import { ActivatedRoute } from '@angular/router';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-get-characters',
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./get-characters.component.css']
 })
 export class GetCharactersComponent implements OnInit {
-
+  mensajeError: string;
   characters: any[];
   urlApi: string;
   constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
@@ -52,19 +54,28 @@ export class GetCharactersComponent implements OnInit {
           (error) => { console.error(error); }
         );
         this.dataApi.getCharPage(page).subscribe((characters) => console.log(characters));
-
+        this.mensajeError = '';
       }
     }
   }
 
   goToPage(formIrPagina: NgForm) {
+
     const pagina = formIrPagina.value;
     this.dataApi.getCharPage(pagina.pagina).subscribe((characters) => console.log(this.characters));
 
     this.dataApi.getCharPage(pagina.pagina).subscribe((response) => {
       this.characters = response;
+
     },
-      (error) => { console.error('Este es el error ' + error.ok); }
+      (error) => {
+        console.error('Este es el error ' + error.ok),
+          this.mensajeError = error.status,
+
+          console.log('kkmensaje error: ' + this.mensajeError);
+
+      }
     );
+    return this.mensajeError;
   }
 }
