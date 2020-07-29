@@ -66,7 +66,7 @@ export class GetCharactersComponent implements OnInit {
 
     this.dataApi.getCharPage(pagina.pagina).subscribe((response) => {
       this.characters = response;
-
+      this.mensajeError = '';
     },
       (error) => {
         console.error('Este es el error ' + error.ok),

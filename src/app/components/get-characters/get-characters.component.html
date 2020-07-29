@@ -1,5 +1,4 @@
 <div class="container">
- <h1 *ngIf="mensajeError">{{mensajeError}}</h1>
   <h1>LISTA PERSONAJES</h1>
   <div class="row">
     <div class="col-md-6 offset-md-5">
@@ -10,16 +9,23 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-md-6 offset-md-5">
+    <div class="col-md-5 offset-md-4">
       <form #formIrPagina="ngForm" ngNativeValidate (ngSubmit)="goToPage(formIrPagina)">
         <div class="form-group row">
-          <label for="labelpagina" class="col-md-2">Página</label>
-          <input type="text" class="col-md-4 form-control" id="pagina" name="pagina" ngModel >
-          <button type="submit">Ir</button>
+          <label for="labelpagina" class="col-md-3 offset-md"><h5>Página</h5></label>
+          <input type="text" class="col-md-4 form-control posicion" id="pagina" name="pagina" ngModel >
+          <button type="submit" class="btn btn-link posicion">Ir</button>
         </div>
       </form>
     </div>
   </div>
+  <span >
+  <div *ngIf="mensajeError" class="row">
+    <div class="col-md-6 offset-md-3">
+      <h5 class="alert alert-danger mensaje_alerta">Por favor, introduzca entre una página entre 1 y 30</h5>
+    </div>
+  </div>
+</span>
   <br>
   <table class="table table-striped">
     <thead>
