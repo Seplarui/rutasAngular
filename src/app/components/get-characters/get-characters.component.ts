@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataApiService } from '../../services/data-api.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -54,5 +55,16 @@ export class GetCharactersComponent implements OnInit {
 
       }
     }
+  }
+
+  goToPage(formIrPagina: NgForm) {
+    const pagina = formIrPagina.value;
+    this.dataApi.getCharPage(pagina.pagina).subscribe((characters) => console.log(this.characters));
+
+    this.dataApi.getCharPage(pagina.pagina).subscribe((response) => {
+      this.characters = response;
+    },
+      (error) => { console.error('Este es el error ' + error.ok); }
+    );
   }
 }
