@@ -1,6 +1,6 @@
 <app-nav></app-nav>
-<div class="container">
-  <h1>LISTA PERSONAJES</h1>
+<div class="container w-100 p-3">
+  <h1 class="text-center">LISTA PERSONAJES</h1>
   <div class="row">
     <div class="col-md-6 offset-md-5">
       <button type="button" class="btn btn-outline-success" (click)="getPage(characters['info'].prev)">Anterior</button>
@@ -50,12 +50,4 @@
     </tbody>
   </table>
   <hr>
-  <!-- <h6>Paginación</h6>
-  <!-- <a href="{{characters['info'].next}}">Siguiente</a>
-  <a href="{{characters['info'].prev}}">Anterior</a> -->
-  <!-- <button type="button" [routerLink]="['/characters',characters['info'].prev]">Anterior</button> -->
-  <!-- <button type="button" (click)="getPage(characters['info'].prev)">Anterior</button> -->
-  <!-- <button type="button" [routerLink]="['/characters',characters['info'].next.substring(48, characters['info'].next.length)]">Siguiente</button> -->
-  <!-- <button type="button" (click)="getPage(characters['info'].next)">Siguiente</button> -->
-
 </div>

@@ -1,0 +1,27 @@
+.jumbotron {
+  background-color: rgb(255, 251, 0);
+}
+
+.container {
+  background-color: green;
+}
+
+img {
+  width: 100%;
+}
+
+ .animacion_char {
+  animation-duration: 1.5s;
+  animation-name: rick_animation;
+}
+
+@keyframes rick_animation {
+  from {
+     /* margin-left:100%; */
+    width:5%;
+  }
+  to {
+     /* margin-left:0%; */
+    width:100%;
+  }
+}
