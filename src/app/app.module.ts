@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetCharactersComponent } from './components/get-characters/get-characters.component';
 import { DetailCharComponent } from './components/detail-char/detail-char.component';
+import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetCharactersComponent,
     DetailCharComponent,
+    NavComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
