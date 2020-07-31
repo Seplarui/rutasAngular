@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataApiService } from '../../services/data-api.service';
 import { ActivatedRoute } from '@angular/router';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-get-characters',
