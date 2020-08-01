@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -11,5 +12,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  searchChar(formSearch: NgForm) {
 
+    console.log(formSearch.value);
+
+
+  }
 }

@@ -14,8 +14,8 @@
           <a class="nav-link" routerLink="/characters">Personajes</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Busca tu personaje" aria-label="Search">
+      <form #formSearch="ngForm" (ngSubmit)= "searchChar(formSearch)" ngNativeValidate class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Busca tu personaje" id="nameChar" name="nameChar" aria-label="Search" ngModel>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
     </div>
