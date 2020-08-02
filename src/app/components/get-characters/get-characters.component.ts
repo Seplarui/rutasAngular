@@ -59,10 +59,10 @@ export class GetCharactersComponent implements OnInit {
 
   goToPage(formIrPagina: NgForm) {
 
-    const pagina = formIrPagina.value;
-    this.dataApi.getCharPage(pagina.pagina).subscribe((characters) => console.log(this.characters));
+    const pagina = formIrPagina.value.pagina;
+    this.dataApi.getCharPage(pagina).subscribe((characters) => console.log(this.characters));
 
-    this.dataApi.getCharPage(pagina.pagina).subscribe((response) => {
+    this.dataApi.getCharPage(pagina).subscribe((response) => {
       this.characters = response;
       this.mensajeError = '';
     },
