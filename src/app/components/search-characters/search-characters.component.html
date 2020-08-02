@@ -1,2 +1,46 @@
 <app-nav></app-nav>
-<p>search-characters works!</p>
+<div class="container w-100 p-3">
+  <div class="row">
+    <div class="col-md-8">
+      <form #formSearch="ngForm" (ngSubmit)="searchChar(formSearch)" ngNativeValidate class="form-inline my-2 my-lg-0">
+        <div class="form-group">
+          <label for="nameChar">Nombre Personaje:</label>&nbsp;
+          <input type="text" class="form-control" id="nameChar" name="nameChar"
+            placeholder="Introduce el nombre del personaje" ngModel>&nbsp;
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <span>
+    <div *ngIf="mensajeError" class="row">
+      <div class="col-md-6 offset-md-3">
+        <h5 class="alert alert-danger mensaje_alerta">No se ha encontrado ningún personaje.</h5>
+      </div>
+    </div>
+  </span>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Identificador</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Especie</th>
+          <th scope="col">Género</th>
+          <th scope="col">Detalles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let char of result["results"]'>
+          <td>{{char.id}}</td>
+          <td>{{char.name}}</td>
+          <td>{{char.species}}</td>
+          <td>{{char.gender}}</td>
+          <td><button type="button" class="btn btn-outline-info" [routerLink]="['/detail/',char.id]">Detalle</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

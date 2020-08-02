@@ -10,18 +10,6 @@ img {
   width: 100%;
 }
 
- .animacion_char {
-  animation-duration: 1.5s;
-  animation-name: rick_animation;
+.posicion_boton {
+  margin-top: 20px;
 }
-
-/* @keyframes rick_animation {
-  from {
-     /* margin-left:100%; */
-    /* width:5%; */
-  /* }
-  to {
-     /* margin-left:0%; */
-    /* width:100%; */
-  /* } */
-/* }  */
