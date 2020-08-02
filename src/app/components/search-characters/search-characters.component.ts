@@ -31,10 +31,9 @@ export class SearchCharactersComponent implements OnInit {
           this.mensajeError = error.status,
 
           console.log('mensaje error: ' + this.mensajeError);
-
+        this.result = [];
       }
     );
     return this.mensajeError;
   }
-
 }
