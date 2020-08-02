@@ -24,7 +24,14 @@ export class DataApiService {
   }
 
   getCharPage(page: number) {
-    const urlApi =  `https://rickandmortyapi.com/api/character/?page=${page}`;
+    const urlApi = `https://rickandmortyapi.com/api/character/?page=${page}`;
+    return this.http.get<any>(urlApi);
+  }
+
+  searchChar(character: string) {
+    console.log('dataapi: ' + character);
+    const urlApi = `https://rickandmortyapi.com/api/character/?name=${character}`;
+    console.log('dataapi: ' + urlApi);
     return this.http.get<any>(urlApi);
   }
 }

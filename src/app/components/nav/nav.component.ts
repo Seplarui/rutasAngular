@@ -24,7 +24,6 @@ export class NavComponent implements OnInit {
     this.dataApi.searchChar(searchCharacter).subscribe((response) => {
       this.result = response;
       this.mensajeError = '';
-      // console.log(this.result);
     },
       (error) => {
         console.error('Este es el error ' + error.ok),
