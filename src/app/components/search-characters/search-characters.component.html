@@ -20,6 +20,7 @@
       </div>
     </div>
   </span>
+  <p *ngIf="result['info'].count>20">Es mayor que 20</p>
   <div class="row" *ngIf='result["results"]'>
     <table class="table table-striped">
       <thead>
