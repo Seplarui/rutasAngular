@@ -9,6 +9,7 @@ import { GetCharactersComponent } from './components/get-characters/get-characte
 import { DetailCharComponent } from './components/detail-char/detail-char.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { SearchCharactersComponent } from './components/search-characters/search-characters.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
     DetailCharComponent,
     NavComponent,
     HomeComponent,
+    SearchCharactersComponent,
   ],
   imports: [
     BrowserModule,
