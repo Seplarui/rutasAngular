@@ -20,8 +20,8 @@ export class SearchCharactersComponent implements OnInit {
   searchChar(formSearch: NgForm) {
 
     const searchCharacter = formSearch.value.nameChar;
-
-    this.dataApi.searchChar(searchCharacter).subscribe((response) => console.log('response' + response['info'].count));
+    this.dataApi.searchChar(searchCharacter).subscribe((response => console.log(response)));
+    this.dataApi.searchChar(searchCharacter).subscribe((response) => console.log('response ' + response['info'].count));
     this.dataApi.searchChar(searchCharacter).subscribe((response) => {
       this.result = response;
       this.mensajeError = '';

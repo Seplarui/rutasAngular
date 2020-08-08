@@ -20,7 +20,31 @@
       </div>
     </div>
   </span>
+  <!--Botones paginación-->
+  <span *ngIf="result['info'].pages>1">
+  <div class="row">
+    <div class="col-md-6 offset-md-5">
+      <button type="button" class="btn btn-outline-success" (click)="getPage(characters['info'].prev)">Anterior</button>
+      <button type="button" class="btn btn-outline-success"
+        (click)="getPage(characters['info'].next)">Siguiente</button>
+    </div>
+  </div>
+  <br>
+  <!--Ir a página-->
+  <div class="row">
+    <div class="col-md-5 offset-md-4">
+      <form #formIrPagina="ngForm" ngNativeValidate (ngSubmit)="goToPage(formIrPagina)">
+        <div class="form-group row">
+          <label for="labelpagina" class="col-md-3 offset-md"><h5>Página</h5></label>
+          <input type="text" class="col-md-4 form-control posicion" id="pagina" name="pagina" ngModel >
+          <button type="submit" class="btn btn-link posicion">Ir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</span>
   <p *ngIf="result['info'].count>20">Es mayor que 20</p>
+  <p>Número de páginas: {{result['info'].pages}}</p>
   <div class="row" *ngIf='result["results"]'>
     <table class="table table-striped">
       <thead>
