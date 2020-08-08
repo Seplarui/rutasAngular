@@ -47,18 +47,18 @@ export class SearchCharactersComponent implements OnInit {
       const page = urlApi.substring(48, urlApi.lenght);
       if (page === null || page === '') {
         this.dataApi.getCharPage(1).subscribe((response) => {
-          this.characters = response;
+          this.result = response;
         },
           (error) => { console.error(error); }
         );
       } else {
         console.log('Número de página: ' + page);
         this.dataApi.getCharPage(page).subscribe((response) => {
-          this.characters = response;
+          this.result = response;
         },
           (error) => { console.error(error); }
         );
-        this.dataApi.getCharPage(page).subscribe((characters) => console.log(characters));
+        this.dataApi.getCharPage(page).subscribe((characters) => console.log(this.result));
         this.mensajeError = '';
       }
     }
@@ -67,10 +67,10 @@ export class SearchCharactersComponent implements OnInit {
   goToPage(formIrPagina: NgForm) {
 
     const pagina = formIrPagina.value.pagina;
-    this.dataApi.getCharPage(pagina).subscribe((characters) => console.log(this.characters));
+    this.dataApi.getCharPage(pagina).subscribe((characters) => console.log(this.result));
 
     this.dataApi.getCharPage(pagina).subscribe((response) => {
-      this.characters = response;
+      this.result = response;
       this.mensajeError = '';
     },
       (error) => {
